@@ -1221,7 +1221,7 @@ To activate authentication with the `.netrc` file you should pass `--netrc` to y
 
 The default location of the .netrc file is `~` (see below).
 
-As an alternative to using the `.netrc` file, which has the disadvantage of keeping your passwords in a plain text file, you can configure a custom shell command to provide the credentials for an extractor. This is done by providing the `--netrc-cmd` parameter, it shall output the credentials in the netrc format and return `0` on success, other values will be treated as an error. `{}` in the command will be replaced by the name of the extractor to make it possible to select the credentials for the right extractor (To use literal braces, double them like `{{}}`).
+As an alternative to using the `.netrc` file, which has the disadvantage of keeping your passwords in a plain text file, you can configure a custom shell command to provide the credentials for an extractor. This is done by providing the `--netrc-cmd` parameter, it shall output the credentials in the netrc format and return `0` on success, other values will be treated as an error. `{}` in the command will be replaced by the name of the extractor to make it possible to select the credentials for the right extractor.
 
 E.g. To use an encrypted `.netrc` file stored as `.authinfo.gpg`
 ```
@@ -1780,7 +1780,7 @@ $ yt-dlp --parse-metadata "description:(?s)(?P<meta_comment>.+)" --embed-metadat
 $ yt-dlp --parse-metadata ":(?P<meta_synopsis>)"
 
 # Remove "formats" field from the infojson by setting it to an empty string
-$ yt-dlp --parse-metadata ":(?P<formats>)" -j
+$ yt-dlp --parse-metadata "video::(?P<formats>)" --write-info-json
 
 # Replace all spaces and "_" in title and uploader with a `-`
 $ yt-dlp --replace-in-metadata "title,uploader" "[ _]" "-"
@@ -1854,11 +1854,11 @@ The following extractors use this feature:
 #### twitter
 * `legacy_api`: Force usage of the legacy Twitter API instead of the GraphQL API for tweet extraction. Has no effect if login cookies are passed
 
-### wrestleuniverse
+#### wrestleuniverse
 * `device_id`: UUID value assigned by the website and used to enforce device limits for paid livestream content. Can be found in browser local storage
 
-#### twitchstream (Twitch)
-* `client_id`: Client ID value to be sent with GraphQL requests, e.g. `twitchstream:client_id=kimne78kx3ncx6brgo4mv6wki5h1ko`
+#### twitch
+* `client_id`: Client ID value to be sent with GraphQL requests, e.g. `twitch:client_id=kimne78kx3ncx6brgo4mv6wki5h1ko`
 
 #### nhkradirulive (NHK らじる★らじる LIVE)
 * `area`: Which regional variation to extract. Valid areas are: `sapporo`, `sendai`, `tokyo`, `nagoya`, `osaka`, `hiroshima`, `matsuyama`, `fukuoka`. Defaults to `tokyo`
