@@ -258,7 +258,7 @@ def build_innertube_clients():
     THIRD_PARTY = {
         'embedUrl': 'https://www.youtube.com/',  # Can be any valid URL
     }
-    BASE_CLIENTS = ('android', 'web', 'tv', 'ios', 'mweb')
+    BASE_CLIENTS = ('ios', 'android', 'web', 'tv', 'mweb')
     priority = qualities(BASE_CLIENTS[::-1])
 
     for client, ytcfg in tuple(INNERTUBE_CLIENTS.items()):
@@ -3599,7 +3599,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
     def _is_unplayable(player_response):
         return traverse_obj(player_response, ('playabilityStatus', 'status')) == 'UNPLAYABLE'
 
-    _STORY_PLAYER_PARAMS = '8AEB'
+    _PLAYER_PARAMS = 'CgIQBg=='
 
     def _extract_player_response(self, client, video_id, master_ytcfg, player_ytcfg, player_url, initial_pr, smuggled_data):
 
@@ -3613,7 +3613,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             'videoId': video_id,
         }
         if smuggled_data.get('is_story') or _split_innertube_client(client)[0] == 'android':
-            yt_query['params'] = self._STORY_PLAYER_PARAMS
+            yt_query['params'] = self._PLAYER_PARAMS
 
         yt_query.update(self._generate_player_context(sts))
         return self._extract_response(
@@ -3625,7 +3625,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
 
     def _get_requested_clients(self, url, smuggled_data):
         requested_clients = []
-        default = ['android', 'web']
+        default = ['ios', 'android', 'web']
         allowed_clients = sorted(
             (client for client in INNERTUBE_CLIENTS.keys() if client[:1] != '_'),
             key=lambda client: INNERTUBE_CLIENTS[client]['priority'], reverse=True)
@@ -3932,6 +3932,10 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             elif itag:
                 f['format_id'] = itag
 
+            if itag in ('616', '235'):
+                f['format_note'] = join_nonempty(f.get('format_note'), 'Premium', delim=' ')
+                f['source_preference'] = (f.get('source_preference') or -1) + 100
+
             f['quality'] = q(itag_qualities.get(try_get(f, lambda f: f['format_id'].split('-')[0]), -1))
             if f['quality'] == -1 and f.get('height'):
                 f['quality'] = q(res_qualities[min(res_qualities, key=lambda x: abs(x - f['height']))])
@@ -4011,8 +4015,8 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
         webpage = None
         if 'webpage' not in self._configuration_arg('player_skip'):
             query = {'bpctr': '9999999999', 'has_verified': '1'}
-            if smuggled_data.get('is_story'):
-                query['pp'] = self._STORY_PLAYER_PARAMS
+            if smuggled_data.get('is_story'):  # XXX: Deprecated
+                query['pp'] = self._PLAYER_PARAMS
             webpage = self._download_webpage(
                 webpage_url, video_id, fatal=False, query=query)
 
