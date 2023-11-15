@@ -4,6 +4,11 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2023.11.15.140514
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/47639492b6f762486f5c42ae36a9aba18af072b5) by [pukkandan](https://github.com/pukkandan)
+
 ### 2023.11.14
 
 #### Important changes
