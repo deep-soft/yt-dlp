@@ -4,6 +4,15 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2023.11.16.204651
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/211238d9c478fb7e18d8fb87edce6563dd052e5e) by [pukkandan](https://github.com/pukkandan)
+- [Remove Python 3.7 support](https://github.com/yt-dlp/yt-dlp/commit/f4b95acafcd69a50040730dfdf732e797278fdcc) ([#8361](https://github.com/yt-dlp/yt-dlp/issues/8361)) by [bashonly](https://github.com/bashonly)
+
+#### Extractor changes
+- **drtv**: [Set default ext for m3u8 formats](https://github.com/yt-dlp/yt-dlp/commit/f96ab86cd837b1b5823baa87d144e15322ee9298) ([#8590](https://github.com/yt-dlp/yt-dlp/issues/8590)) by [seproDev](https://github.com/seproDev)
+
 ### 2023.11.16
 
 #### Extractor changes
