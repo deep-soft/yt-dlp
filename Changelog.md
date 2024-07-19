@@ -4,6 +4,18 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2024.07.19.020413
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/22480c943784aa3c97903d6285bb2a5088dcc692) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/7f5975445252807464bd33e1e099d74fc25ab999) by [pukkandan](https://github.com/pukkandan)
+
+#### Extractor changes
+- **abematv**: [Adapt key retrieval to request handler framework](https://github.com/yt-dlp/yt-dlp/commit/a3bab4752a2b3d56e5a59b4e0411bb8f695c010b) ([#10491](https://github.com/yt-dlp/yt-dlp/issues/10491)) by [bashonly](https://github.com/bashonly)
+
+#### Misc. changes
+- **build**: [Pin `setuptools` version](https://github.com/yt-dlp/yt-dlp/commit/e046db8a116b1c320d4785daadd48ea0b22a3987) ([#10493](https://github.com/yt-dlp/yt-dlp/issues/10493)) by [bashonly](https://github.com/bashonly)
+
 ### 2024.07.16
 
 #### Core changes
