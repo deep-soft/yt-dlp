@@ -441,12 +441,6 @@ from .crowdbunker import (
     CrowdBunkerIE,
 )
 from .crtvg import CrtvgIE
-from .crunchyroll import (
-    CrunchyrollArtistIE,
-    CrunchyrollBetaIE,
-    CrunchyrollBetaShowIE,
-    CrunchyrollMusicIE,
-)
 from .cspan import (
     CSpanCongressIE,
     CSpanIE,
@@ -460,7 +454,10 @@ from .curiositystream import (
     CuriosityStreamIE,
     CuriosityStreamSeriesIE,
 )
-from .cwtv import CWTVIE
+from .cwtv import (
+    CWTVIE,
+    CWTVMovieIE,
+)
 from .cybrary import (
     CybraryCourseIE,
     CybraryIE,
