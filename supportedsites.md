@@ -506,7 +506,8 @@ The only reliable way to check if a site is supported is to try it.
  - **GDCVault**: [*gdcvault*](## "netrc machine") (**Currently broken**)
  - **GediDigital**
  - **gem.cbc.ca**: [*cbcgem*](## "netrc machine")
- - **gem.cbc.ca:live**
+ - **gem.cbc.ca:live**: [*cbcgem*](## "netrc machine")
+ - **gem.cbc.ca:olympics**: [*cbcgem*](## "netrc machine")
  - **gem.cbc.ca:playlist**: [*cbcgem*](## "netrc machine")
  - **Genius**
  - **GeniusLyrics**
@@ -734,6 +735,8 @@ The only reliable way to check if a site is supported is to try it.
  - **Livestreamfails**
  - **Lnk**
  - **loc**: Library of Congress
+ - **Locipo**
+ - **LocipoPlaylist**
  - **Loco**
  - **loom**
  - **loom:folder**: (**Currently broken**)
@@ -763,6 +766,7 @@ The only reliable way to check if a site is supported is to try it.
  - **MarkizaPage**: (**Currently broken**)
  - **massengeschmack.tv**
  - **Masters**
+ - **MatchiTV**
  - **MatchTV**
  - **mave**
  - **mave:channel**
@@ -1550,10 +1554,12 @@ The only reliable way to check if a site is supported is to try it.
  - **TVC**
  - **TVCArticle**
  - **TVer**
+ - **tver:olympic**
  - **tvigle**: Интернет-телевидение Tvigle.ru
  - **TVIPlayer**
  - **TVN24**: (**Currently broken**)
  - **tvnoe**: Televize Noe
+ - **TVO**
  - **tvopengr:embed**: tvopen.gr embedded videos
  - **tvopengr:watch**: tvopen.gr (and ethnos.gr) videos
  - **tvp**: Telewizja Polska
@@ -1664,6 +1670,7 @@ The only reliable way to check if a site is supported is to try it.
  - **ViMP:Playlist**
  - **Viously**
  - **Viqeo**: (**Currently broken**)
+ - **Visir**: Vísir
  - **Viu**
  - **viu:ott**: [*viu*](## "netrc machine")
  - **viu:playlist**
